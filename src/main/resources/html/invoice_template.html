@@ -1,0 +1,111 @@
+<!-- invoice_template.html -->
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .invoice-header, .invoice-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .invoice-header .info {
+            font-size: 14px;
+        }
+        .invoice-header .info h3 {
+            margin: 0;
+        }
+        .invoice-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .invoice-table th, .invoice-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .invoice-table th {
+            background-color: #f4f4f4;
+        }
+        .invoice-total {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 16px;
+        }
+        .invoice-total p {
+            margin-left: 20px;
+        }
+        .invoice-footer {
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="invoice-header">
+        <div class="info">
+            <h3>Invoice #{{invoiceNumber}}</h3>
+            <p>Date: {{date}}</p>
+            <p>Due Date: {{dueDate}}</p>
+        </div>
+        <div class="info">
+            <h3>Seller</h3>
+            <p>{{sellerName}}</p>
+            <p>{{sellerAddress}}</p>
+            <p>{{sellerEmail}}</p>
+        </div>
+    </div>
+
+    <div class="invoice-header">
+        <div class="info">
+            <h3>Buyer</h3>
+            <p>{{buyerName}}</p>
+            <p>{{buyerAddress}}</p>
+            <p>{{buyerEmail}}</p>
+        </div>
+    </div>
+
+    <table class="invoice-table">
+        <thead>
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{t}}
+        </tbody>
+    </table>
+
+    <div class="invoice-total">
+        <p><strong>Subtotal:</strong> {{subtotal}}</p>
+        <p><strong>Tax ({{taxRate}}%):</strong> {{taxAmount}}</p>
+        <p><strong>Total Amount:</strong> {{totalAmount}}</p>
+    </div>
+
+    <div class="invoice-footer">
+        <p>Thank you for your business!</p>
+    </div>
+</div>
+</body>
+</html>
