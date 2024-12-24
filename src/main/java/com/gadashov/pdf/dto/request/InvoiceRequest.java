@@ -1,6 +1,8 @@
-package com.gadashov.documentationpdf.pdf.request;
+package com.gadashov.pdf.dto.request;
 
-import com.gadashov.documentationpdf.pdf.root.Item;
+import com.gadashov.pdf.dto.request.component.BuyerCC;
+import com.gadashov.pdf.dto.request.component.InvoiceItemCC;
+import com.gadashov.pdf.dto.request.component.SellerCC;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,19 +16,16 @@ import java.util.List;
 @Builder
 public class InvoiceRequest {
 
-    private String invoiceNumber;
+    private String orderNumber;
     private String date;
     private String dueDate;
-    private String sellerName;
-    private String sellerAddress;
-    private String sellerEmail;
-    private String buyerName;
-    private String buyerAddress;
-    private String buyerEmail;
-    private List<Item> items;
     private String subtotal;
     private String taxRate;
     private String taxAmount;
     private String totalAmount;
+
+    private SellerCC seller;
+    private BuyerCC buyer;
+    private List<InvoiceItemCC> items;
 
 }

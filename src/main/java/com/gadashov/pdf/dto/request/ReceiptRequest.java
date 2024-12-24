@@ -1,4 +1,4 @@
-package com.gadashov.documentationpdf.pdf.request;
+package com.gadashov.pdf.dto.request;
 
 
 import lombok.AllArgsConstructor;

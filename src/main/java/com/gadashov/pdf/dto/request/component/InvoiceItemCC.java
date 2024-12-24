@@ -1,4 +1,4 @@
-package com.gadashov.documentationpdf.pdf.root;
+package com.gadashov.pdf.dto.request.component;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,11 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Item {
-
+public class InvoiceItemCC {
     private String name;
     private int quantity;
     private double price;
     private double total;
-
 }
